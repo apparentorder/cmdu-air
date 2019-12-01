@@ -41,7 +41,7 @@ resource aws_iam_policy air-sqs-send {
 		{
 		    "Effect": "Allow",
 		    "Action": "sqs:SendMessage",
-		    "Resource": "arn:aws:sqs:eu-central-1:329261680777:airdata"
+		    "Resource": "arn:aws:sqs:eu-central-1:${data.aws_caller_identity.current.account_id}:airdata"
 		}
 	    ]
 	})

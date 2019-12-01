@@ -25,7 +25,7 @@ resource aws_iam_policy air-sns-publish {
 		{
 		    "Effect": "Allow",
 		    "Action": "sns:Publish",
-		    "Resource": "arn:aws:sns:eu-central-1:329261680777:air-notify"
+		    "Resource": "arn:aws:sns:eu-central-1:${data.aws_caller_identity.current.account_id}:air-notify"
 		}
 	    ]
 	})
@@ -43,7 +43,7 @@ resource aws_iam_policy air-sqs-receive {
 			"sqs:ReceiveMessage",
 			"sqs:GetQueueAttributes"
 		    ],
-		    "Resource": "arn:aws:sqs:eu-central-1:329261680777:airdata"
+		    "Resource": "arn:aws:sqs:eu-central-1:${data.aws_caller_identity.current.account_id}:airdata"
 		}
 	    ]
 	})
