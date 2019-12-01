@@ -1,2 +1,3 @@
 terraform.*
 .terraform
+air-sqs-to-sns.zip
