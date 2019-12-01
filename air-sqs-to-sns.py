@@ -2,6 +2,11 @@ import pprint
 import boto3
 from datetime import datetime
 
+#
+# N.B.:
+#
+# *each* boto3.client incurs a ~200ms runtime penalty (wtf.)
+#
 sns = boto3.client('sns')
 sts = boto3.client('sts')
 
